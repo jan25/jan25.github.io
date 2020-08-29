@@ -119,39 +119,29 @@
     color: #fff;
     padding: 2px 3px;
   }
-
   </style>
 </head>
 <body>
-    <header>
-        <div class="nav">
-            <span class="name"></p><a href="./" target="_self">Abhilash Gnan</a></span>
-            <span class="nav-link"><a href="./projects.html" target="_self">Projects</a></span>
-            <span class="nav-link"><a href="./about.html" target="_self">About</a></span>
-        </div>
-    </header>
-
-    <main>
-        <article>
-            <h1>About</h1>
-            <hr>
-            <p>
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-            </p>
-            <p>This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-            </p>
-            <p>This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-            </p>
-        </article>
+  <header>
+    <div class="nav">
+      <span class="name"></p><a href="./" target="_self">{{ .Title }}</a></span>
+      <span class="nav-link"><a href="./projects.html" target="_self">Projects</a></span>
+      <span class="nav-link"><a href="./about.html" target="_self">About</a></span>
+    </div>
+  
+    <h1>About</h1>
+    <hr>
+  </header>
+  
+  <main>
+    <article>
+      <header class="heading">
+        <h1 class="page-title"><a href="http://tybenz.github.io/gitdrop">
+          
+          Gitdrop</a></h1>
+          <p class="timestamp">Mac app to quickly drag + drop files onto Github</p>
+        </header>
+      </article>
   </main>
 
   <footer>

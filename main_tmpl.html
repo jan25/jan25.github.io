@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="UTF-8">
-  <title>Abhilash Gnan</title>
+  <title>{{ .User }}</title>
+  <link rel="icon" href="./avatar.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel="stylesheet" type="text/css">
   <style>
   body {
@@ -119,45 +120,27 @@
     color: #fff;
     padding: 2px 3px;
   }
-
   </style>
 </head>
 <body>
     <header>
         <div class="nav">
-            <span class="name"></p><a href="./" target="_self">Abhilash Gnan</a></span>
+            <span class="name"></p><a href="./" target="_self">{{ .User }}</a></span>
             <span class="nav-link"><a href="./projects.html" target="_self">Projects</a></span>
             <span class="nav-link"><a href="./about.html" target="_self">About</a></span>
         </div>
     </header>
 
     <main>
-        <article>
-            <h1>About</h1>
-            <hr>
-            <p>
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-            </p>
-            <p>This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-            </p>
-            <p>This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-                This is abbout. so say something. This is abbout. so say something.
-            </p>
-        </article>
-  </main>
+        <h1>{{ .Heading }}</h1>
+        <hr>
+        {{ .Content }}
+    </main>
 
-  <footer>
-    <a href="https://github.com/jan25">github</a>
-    &nbsp;
-    <a href="https://twitter.com/abhilashgnan">twitter</a>
-  </footer>
+    <footer>
+        <a href="https://github.com/jan25">github</a>
+        &nbsp;
+        <a href="https://twitter.com/abhilashgnan">twitter</a>
+    </footer>
 </body>
 </html>
