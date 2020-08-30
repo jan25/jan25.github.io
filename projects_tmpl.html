@@ -1,0 +1,12 @@
+<div class="projects" style="margin-top: 16px;">
+    {{range .Projects}}
+    <article>
+        <header class="heading">
+            <h1 class="page-title">
+                <a href="{{.Link}}">{{.Title}}</a>
+            </h1>
+            <p class="timestamp">{{.Desc}}</p>
+        </header>
+    </article>
+    {{end}}
+</div>
