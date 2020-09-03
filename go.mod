@@ -3,6 +3,6 @@ module jan25.github.io
 go 1.14
 
 require (
-	github.com/yosssi/gohtml v0.0.0-20200519115854-476f5b4b8047 // indirect
+	github.com/yosssi/gohtml v0.0.0-20200519115854-476f5b4b8047
 	golang.org/x/net v0.0.0-20200822124328-c89045814202 // indirect
 )
