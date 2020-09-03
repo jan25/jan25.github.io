@@ -5,6 +5,8 @@ import (
 	"log"
 	"os"
 	"text/template"
+
+	"github.com/yosssi/gohtml"
 )
 
 // Data is wrapper type to specifiy data variables
@@ -12,7 +14,13 @@ import (
 type Data struct {
 	User    string
 	Heading string
+	Links   string
 	Content string
+}
+
+type Link struct {
+	FileName string
+	Title    string
 }
 
 type Meta struct {
@@ -139,7 +147,8 @@ func main() {
 		},
 	}
 
-	tmpl := template.Must(template.ParseFiles(mainTmpl))
+	links := generateLinksTmpl(blocks)
+
 	for _, b := range blocks {
 		w := InmemoryWriter{}
 		fname := ""
@@ -155,17 +164,55 @@ func main() {
 			fname = block.Name
 			heading = block.Meta.Heading
 		}
+
+		html := compileTemplate(mainTmpl, Data{
+			User:    userName,
+			Heading: heading,
+			Links:   links,
+			Content: w.toString(),
+		})
 		fname = fmt.Sprintf("%s.html", fname)
 		f, err := os.OpenFile(fname, os.O_WRONLY|os.O_CREATE, os.ModePerm)
 		if err != nil {
 			log.Fatal(err)
 		}
-		tmpl.Execute(f, Data{
-			User:    userName,
-			Heading: heading,
-			Content: w.toString(),
-		})
+		formatted := gohtml.Format(html)
+		f.Write([]byte(formatted))
 		f.Close()
 	}
 
+}
+
+func generateLinksTmpl(blocks []interface{}) string {
+	links := make([]Link, 0)
+	for _, b := range blocks {
+		if block, ok := b.(ProjectsBlock); ok {
+			links = append(links, Link{
+				Title:    block.Meta.Heading,
+				FileName: fmt.Sprintf("%s.html", block.Meta.Name),
+			})
+		} else if block, ok := b.(AboutBlock); ok {
+			links = append(links, Link{
+				Title:    block.Meta.Heading,
+				FileName: fmt.Sprintf("%s.html", block.Meta.Name),
+			})
+		} else {
+			log.Fatalf("Invalid block %v", block)
+		}
+	}
+
+	return compileTemplate("nav_links_tmpl.html",
+		struct {
+			Links []Link
+		}{
+			Links: links,
+		},
+	)
+}
+
+func compileTemplate(templateName string, data interface{}) string {
+	w := InmemoryWriter{}
+	tmpl := template.Must(template.ParseFiles(templateName))
+	tmpl.Execute(&w, data)
+	return w.toString()
 }

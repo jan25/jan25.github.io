@@ -21,6 +21,12 @@
 
 `I contribute to opensource projects in spare time, mainly at observability communities, helping them with small-medium features, testing, documentation or anything i could do really in time i got. I enjoyed learning many things and not to mention giving back to community. I also got to interact with amazing engineers from different companies.`,
 
-`Besides technical work, I listen to tons of radio. I also enjoy cooking and discovering new recipes. I travel now and then to explore new places or simply exploring on my bike if not far. When I can i take part in voluntary work in my city.`,
+`Besides technical work, I listen to tons of radio. I also enjoy cooking and discovering new recipes. I travel now and then to explore new places or simply exploring on my bike if not far. When I can, i take part in voluntary work in my city.`,
 
 `Kia Ora! I found Kia Ora in this <a href="https://www.youtube.com/watch?v=zVDu0tJHTnY">video</a>. Have a great day :)`,
+
+TODO
+Missing comma at voluntary work sentence
+Add keywords - Javascript, SEO etc to About section? for technical people
+Open new tab for all links except nav
+https://gowebexamples.com/templates/
