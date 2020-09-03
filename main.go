@@ -147,22 +147,13 @@ func compileTemplate(templateName string, data interface{}) string {
 	return w.toString()
 }
 
-func generateLinksTmpl(blocks []interface{}) string {
+func generateLinksTmpl(blocks []Block) string {
 	links := make([]Link, 0)
 	for _, b := range blocks {
-		if block, ok := b.(ProjectsBlock); ok {
-			links = append(links, Link{
-				Title:    block.Meta.Heading,
-				FileName: fmt.Sprintf("%s.html", block.Meta.Name),
-			})
-		} else if block, ok := b.(AboutBlock); ok {
-			links = append(links, Link{
-				Title:    block.Meta.Heading,
-				FileName: fmt.Sprintf("%s.html", block.Meta.Name),
-			})
-		} else {
-			log.Fatalf("Invalid block %v", block)
-		}
+		links = append(links, Link{
+			Title:    b.getMeta().Heading,
+			FileName: fmt.Sprintf("%s.html", b.getMeta().Name),
+		})
 	}
 
 	return compileTemplate("nav_links_tmpl.html",
