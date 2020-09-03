@@ -9,7 +9,7 @@ import (
 	"github.com/yosssi/gohtml"
 )
 
-// Data is wrapper type to specifiy data variables
+// Data is Top level wrapper type to specifiy data variables
 // which are injected in templates
 type Data struct {
 	User    string
@@ -18,33 +18,68 @@ type Data struct {
 	Content string
 }
 
+// Link is link at top of page
 type Link struct {
 	FileName string
 	Title    string
 }
 
+// Meta is for each Block
 type Meta struct {
-	Template string
-	Name     string
-	Heading  string
+	Name    string
+	Heading string
 }
 
+// Block is abstract type
+type Block interface {
+	getMeta() Meta
+	getContent() string
+}
+
+// ProjectsBlock is for Projects page
 type ProjectsBlock struct {
 	Meta
 	Projects []Project
 }
 
+// Project is a single project
 type Project struct {
 	Title string
 	Desc  string
 	Link  string
 }
 
+func (pb *ProjectsBlock) getMeta() Meta {
+	return pb.Meta
+}
+
+func (pb *ProjectsBlock) getContent() string {
+	return compileTemplate("projects_tmpl.html", struct {
+		Projects []Project
+	}{
+		Projects: pb.Projects,
+	})
+}
+
+// AboutBlock is for about page
 type AboutBlock struct {
 	Meta
 	Paragraphs []string
 }
 
+func (ab *AboutBlock) getMeta() Meta {
+	return ab.Meta
+}
+
+func (ab *AboutBlock) getContent() string {
+	return compileTemplate("about_tmpl.html", struct {
+		Paragraphs []string
+	}{
+		Paragraphs: ab.Paragraphs,
+	})
+}
+
+// InmemoryWriter holds compiled templates
 type InmemoryWriter struct {
 	Value []byte
 }
@@ -62,12 +97,12 @@ const mainTmpl = "main_tmpl.html"
 const userName = "Abhilash Gnan"
 
 func main() {
-	blocks := []interface{}{
-		ProjectsBlock{
+
+	blocks := []Block{
+		&ProjectsBlock{
 			Meta: Meta{
-				Template: "projects_tmpl.html",
-				Name:     "projects",
-				Heading:  "Projects",
+				Name:    "projects",
+				Heading: "Projects",
 			},
 			Projects: []Project{
 				{
@@ -127,11 +162,10 @@ func main() {
 				},
 			},
 		},
-		AboutBlock{
+		&AboutBlock{
 			Meta: Meta{
-				Template: "about_tmpl.html",
-				Name:     "about",
-				Heading:  "About",
+				Name:    "about",
+				Heading: "About",
 			},
 			Paragraphs: []string{
 				`My name is Abhilash. I'm a Sofware engineer, mainly working on web applications. I've listed some of my projects in Projects section, do check it.`,
@@ -150,28 +184,16 @@ func main() {
 	links := generateLinksTmpl(blocks)
 
 	for _, b := range blocks {
-		w := InmemoryWriter{}
-		fname := ""
-		heading := ""
-		if block, ok := b.(ProjectsBlock); ok {
-			contentTmpl := template.Must(template.ParseFiles(block.Meta.Template))
-			contentTmpl.Execute(&w, block)
-			fname = block.Name
-			heading = block.Meta.Heading
-		} else if block, ok := b.(AboutBlock); ok {
-			contentTmpl := template.Must(template.ParseFiles(block.Meta.Template))
-			contentTmpl.Execute(&w, block)
-			fname = block.Name
-			heading = block.Meta.Heading
-		}
+		fname := fmt.Sprintf("%s.html", b.getMeta().Name)
+		heading := b.getMeta().Heading
+		content := b.getContent()
 
 		html := compileTemplate(mainTmpl, Data{
 			User:    userName,
 			Heading: heading,
 			Links:   links,
-			Content: w.toString(),
+			Content: content,
 		})
-		fname = fmt.Sprintf("%s.html", fname)
 		f, err := os.OpenFile(fname, os.O_WRONLY|os.O_CREATE, os.ModePerm)
 		if err != nil {
 			log.Fatal(err)
@@ -180,25 +202,15 @@ func main() {
 		f.Write([]byte(formatted))
 		f.Close()
 	}
-
 }
 
-func generateLinksTmpl(blocks []interface{}) string {
+func generateLinksTmpl(blocks []Block) string {
 	links := make([]Link, 0)
 	for _, b := range blocks {
-		if block, ok := b.(ProjectsBlock); ok {
-			links = append(links, Link{
-				Title:    block.Meta.Heading,
-				FileName: fmt.Sprintf("%s.html", block.Meta.Name),
-			})
-		} else if block, ok := b.(AboutBlock); ok {
-			links = append(links, Link{
-				Title:    block.Meta.Heading,
-				FileName: fmt.Sprintf("%s.html", block.Meta.Name),
-			})
-		} else {
-			log.Fatalf("Invalid block %v", block)
-		}
+		links = append(links, Link{
+			Title:    b.getMeta().Heading,
+			FileName: fmt.Sprintf("%s.html", b.getMeta().Name),
+		})
 	}
 
 	return compileTemplate("nav_links_tmpl.html",
