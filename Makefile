@@ -21,3 +21,7 @@ clean:
 	rm -f $(BINARY_UNIX)
 	rm -f ./public/about.html
 	rm -f ./public/projects.html
+
+.PHOHY: deploy
+deploy:
+	git subtree push --prefix public origin gh-pages
