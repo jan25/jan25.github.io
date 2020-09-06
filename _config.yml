@@ -1,0 +1,4 @@
+# Github actions settings
+# TODO: setup directory for generated HTML and
+# point github actions to use that for deployments
+theme: none
