@@ -84,7 +84,7 @@ var Blocks = []Block{
 
 			`Besides technical work, I listen to tons of radio. I also enjoy cooking and discovering new recipes. Occasionally, I travel to explore new places or simply exploring on my bicycle if not far. When I can, I take part in voluntary work in my city.`,
 
-			`Kia Ora! I found Kia Ora in this <a href="https://www.youtube.com/watch?v=zVDu0tJHTnY">video</a>. Have a great day!`,
+			`Kia Ora! I found Kia Ora in this <a href="https://www.youtube.com/watch?v=zVDu0tJHTnY" target="_blank">video</a>. Have a great day!`,
 		},
 	},
 }
