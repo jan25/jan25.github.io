@@ -30,3 +30,6 @@ Missing comma at voluntary work sentence
 Add keywords - Javascript, SEO etc to About section? for technical people
 Open new tab for all links except nav
 https://gowebexamples.com/templates/
+write better readme
+setup local go server with hot reload
+add tests

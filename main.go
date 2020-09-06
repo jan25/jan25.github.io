@@ -79,7 +79,7 @@ func (ab *AboutBlock) getContent() string {
 	})
 }
 
-// InmemoryWriter holds compiled templates
+// InmemoryWriter holds compiled template strings
 type InmemoryWriter struct {
 	Value []byte
 }
@@ -97,7 +97,7 @@ const mainTmpl = "main_tmpl.html"
 const userName = "Abhilash Gnan"
 
 func main() {
-	// blocks is defined in values.go
+	// Blocks is defined in blocks.go
 
 	links := generateLinksTmpl(Blocks)
 
