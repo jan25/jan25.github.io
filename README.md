@@ -1,6 +1,6 @@
-## Personal website [WIP]
+## Portfolio
 
-I'm trying to setup a minimal porfolio site hosted on Github pages using static HTML, CSS and Go templating.
+Minimal portfolio website using static HTML/CSS and Go templates. You can clone this repo and customize it to your content and needs.
 
 ### Credits
 
