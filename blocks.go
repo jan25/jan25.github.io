@@ -65,7 +65,7 @@ var Blocks = []Block{
 			},
 			{
 				Title: "Portfolio",
-				Desc:  "Template website using static HTML/CSS and Go templating. This website you're looking is the live demo :)",
+				Desc:  "Minimal portfolio website using static HTML and Go templates. This website you're looking is the live demo :)",
 				Link:  "https://github.com/jan25/jan25.github.io",
 			},
 		},
