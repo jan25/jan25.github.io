@@ -54,7 +54,7 @@ func (pb *ProjectsBlock) getMeta() Meta {
 }
 
 func (pb *ProjectsBlock) getContent() string {
-	return compileTemplate("projects_tmpl.html", struct {
+	return compileTemplate("tmpl/projects_tmpl.html", struct {
 		Projects []Project
 	}{
 		Projects: pb.Projects,
@@ -72,7 +72,7 @@ func (ab *AboutBlock) getMeta() Meta {
 }
 
 func (ab *AboutBlock) getContent() string {
-	return compileTemplate("about_tmpl.html", struct {
+	return compileTemplate("tmpl/about_tmpl.html", struct {
 		Paragraphs []string
 	}{
 		Paragraphs: ab.Paragraphs,
@@ -93,7 +93,7 @@ func (w *InmemoryWriter) toString() string {
 	return string(w.Value)
 }
 
-const mainTmpl = "main_tmpl.html"
+const mainTmpl = "tmpl/main_tmpl.html"
 const userName = "Abhilash Gnan"
 
 func main() {
@@ -102,7 +102,7 @@ func main() {
 	links := generateLinksTmpl(Blocks)
 
 	for _, b := range Blocks {
-		fname := fmt.Sprintf("%s.html", b.getMeta().Name)
+		fname := fmt.Sprintf("public/%s.html", b.getMeta().Name)
 		heading := b.getMeta().Heading
 		content := b.getContent()
 
@@ -131,7 +131,7 @@ func generateLinksTmpl(blocks []Block) string {
 		})
 	}
 
-	return compileTemplate("nav_links_tmpl.html",
+	return compileTemplate("tmpl/nav_links_tmpl.html",
 		struct {
 			Links []Link
 		}{
