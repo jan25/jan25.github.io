@@ -17,7 +17,7 @@ python3 -m http.server -d public
 # Or use your favorite tool to serve static files
 ```
 
-If you're planning to use Github pages for deployments, please select folder as `public` in Settings section.
+If you're planning to use Github pages for deployments, please select folder as `public` in Settings section. Also, checkout `make deploy` command in provided Makefile.
 
 #### Credits
 
