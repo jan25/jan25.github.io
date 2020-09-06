@@ -146,28 +146,3 @@ func compileTemplate(templateName string, data interface{}) string {
 	tmpl.Execute(&w, data)
 	return w.toString()
 }
-
-func generateLinksTmpl(blocks []Block) string {
-	links := make([]Link, 0)
-	for _, b := range blocks {
-		links = append(links, Link{
-			Title:    b.getMeta().Heading,
-			FileName: fmt.Sprintf("%s.html", b.getMeta().Name),
-		})
-	}
-
-	return compileTemplate("nav_links_tmpl.html",
-		struct {
-			Links []Link
-		}{
-			Links: links,
-		},
-	)
-}
-
-func compileTemplate(templateName string, data interface{}) string {
-	w := InmemoryWriter{}
-	tmpl := template.Must(template.ParseFiles(templateName))
-	tmpl.Execute(&w, data)
-	return w.toString()
-}
