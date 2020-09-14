@@ -94,10 +94,9 @@ func (w *InmemoryWriter) toString() string {
 }
 
 const mainTmpl = "tmpl/main_tmpl.html"
-const userName = "Abhilash Gnan"
 
 func main() {
-	// Blocks is defined in blocks.go
+	// UserName, Blocks is defined in content.go
 
 	links := generateLinksTmpl(Blocks)
 
@@ -107,7 +106,7 @@ func main() {
 		content := b.getContent()
 
 		html := compileTemplate(mainTmpl, Data{
-			User:    userName,
+			User:    UserName,
 			Heading: heading,
 			Links:   links,
 			Content: content,

@@ -1,5 +1,8 @@
 package main
 
+// UserName is name of the user in portfolio
+const UserName = "Abhilash Gnan"
+
 // Blocks holds actual block data
 var Blocks = []Block{
 	&ProjectsBlock{

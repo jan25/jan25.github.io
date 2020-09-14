@@ -4,7 +4,7 @@ Minimal portfolio website using static HTML/CSS and Go templates. You can clone 
 
 ## Usage
 
-Clone or fork this repo and modify content defined in `blocks.go` file to see your custom content in the portfolio. Run these commands after adding your content:
+Clone or fork this repo and modify content defined in `content.go` file to see your custom content in the portfolio. Run these commands after adding your content:
 
 ```sh
 # Generate static files
