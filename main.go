@@ -116,6 +116,7 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
+		gohtml.Condense = true // enable inline tags
 		formatted := gohtml.Format(html)
 		f.Write([]byte(formatted))
 		f.Close()
