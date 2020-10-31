@@ -85,7 +85,7 @@ var Blocks = []Block{
 
 			`I work on all parts of web application development. Parts I enjoy most are at the intersection of product/application and infrastructure, such as CI/CD and Monitoring. Though currently focused on frontend and backend product development, my goal is to slowly transition into teams that build tooling to improve this intersection.`,
 
-			`I contribute to Open-source projects in spare time, mainly to observability communities. I help them with small-medium features, testing, documentation or anything i can fit in my free time. I've enjoyed learning many things and not to mention giving back to community. I also got to interact with amazing engineers from different organizations.`,
+			`I contribute to Open-source projects in spare time, mainly to Observability communities. I help them with small-medium features, testing, documentation or anything i can fit in my free time. I've enjoyed learning many things and not to mention giving back to community. I also got to interact with amazing engineers from different organizations.`,
 
 			`Outside technical work, I follow F1 and listen to radio. I also enjoy cooking and discovering new recipes. I like traveling to explore new places or simply exploring neighborhoods on my bicycle if not far. When I can, I take part in voluntary work in my city.`,
 
