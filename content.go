@@ -83,11 +83,27 @@ var Blocks = []Block{
 
 			`I work on all parts of web application development. Parts I enjoy most are at the intersection of product/application and infrastructure, such as CI/CD and Monitoring. Though currently focused on frontend and backend product development, my goal is to slowly transition into teams that build tooling to improve this intersection.`,
 
-			`I contribute to opensource projects in spare time, mainly to observability communities, helping them with small-medium features, testing, documentation or anything i could do really in available time. I enjoyed learning many things and not to mention giving back to community. I also got to interact with amazing engineers from different companies.`,
+			`I contribute to opensource projects in spare time, mainly to observability communities, helping them with small-medium features, testing, documentation or anything i can fit in my free time. I enjoyed learning many things and not to mention giving back to community. I also got to interact with amazing engineers from different organizations.`,
 
 			`Besides technical work, I listen to tons of radio. I also enjoy cooking and discovering new recipes. Occasionally, I travel to explore new places or simply exploring on my bicycle if not far. When I can, I take part in voluntary work in my city.`,
 
 			`Kia Ora! I found Kia Ora in this <a href="https://www.youtube.com/watch?v=zVDu0tJHTnY" target="_blank">video</a>. Have a great day!`,
 		},
+	},
+}
+
+// FooterLinks holds data for page footer
+var FooterLinks = []FooterLink{
+	{
+		Title: "Github",
+		URL:   "https://github.com/jan25",
+	},
+	{
+		Title: "Linkedin",
+		URL:   "https://www.linkedin.com/in/abhilash-gnan-0108b2105",
+	},
+	{
+		Title: "Twitter",
+		URL:   "https://twitter.com/abhilashgnan",
 	},
 }

@@ -16,10 +16,11 @@ type Data struct {
 	Heading string
 	Links   string
 	Content string
+	Footer  string
 }
 
-// Link is link at top of page
-type Link struct {
+// PageLink is link at top of page
+type PageLink struct {
 	FileName string
 	Title    string
 }
@@ -34,6 +35,12 @@ type Meta struct {
 type Block interface {
 	getMeta() Meta
 	getContent() string
+}
+
+// FooterLink is a link in page footer
+type FooterLink struct {
+	Title string
+	URL   string
 }
 
 // ProjectsBlock is for Projects page
@@ -96,9 +103,10 @@ func (w *InmemoryWriter) toString() string {
 const mainTmpl = "tmpl/main_tmpl.html"
 
 func main() {
-	// UserName, Blocks is defined in content.go
+	// UserName, Blocks, FooterLinks is defined in content.go
 
 	links := generateLinksTmpl(Blocks)
+	footer := generateFooterTmpl(FooterLinks)
 
 	for _, b := range Blocks {
 		fname := fmt.Sprintf("public/%s.html", b.getMeta().Name)
@@ -110,6 +118,7 @@ func main() {
 			Heading: heading,
 			Links:   links,
 			Content: content,
+			Footer:  footer,
 		})
 		f, err := os.OpenFile(fname, os.O_WRONLY|os.O_CREATE, os.ModePerm)
 		if err != nil {
@@ -124,9 +133,9 @@ func main() {
 }
 
 func generateLinksTmpl(blocks []Block) string {
-	links := make([]Link, 0)
+	links := make([]PageLink, 0)
 	for _, b := range blocks {
-		links = append(links, Link{
+		links = append(links, PageLink{
 			Title:    b.getMeta().Heading,
 			FileName: fmt.Sprintf("%s.html", b.getMeta().Name),
 		})
@@ -134,7 +143,17 @@ func generateLinksTmpl(blocks []Block) string {
 
 	return compileTemplate("tmpl/nav_links_tmpl.html",
 		struct {
-			Links []Link
+			Links []PageLink
+		}{
+			Links: links,
+		},
+	)
+}
+
+func generateFooterTmpl(links []FooterLink) string {
+	return compileTemplate("tmpl/footer_tmpl.html",
+		struct {
+			Links []FooterLink
 		}{
 			Links: links,
 		},
