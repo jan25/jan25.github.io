@@ -102,7 +102,7 @@ var FooterLinks = []FooterLink{
 	},
 	{
 		Title: "Linkedin",
-		URL:   "https://www.linkedin.com/in/abhilash-gnan-0108b2105",
+		URL:   "https://www.linkedin.com/in/%F0%9F%91%8B-abhilash-gnan-0108b2105/",
 	},
 	{
 		Title: "Twitter",
