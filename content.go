@@ -5,6 +5,7 @@ const UserName = "Abhilash Gnan"
 
 // Blocks holds actual block data
 var Blocks = []Block{
+	// Projects page content
 	&ProjectsBlock{
 		Meta: Meta{
 			Name:    "projects",
@@ -73,6 +74,7 @@ var Blocks = []Block{
 			},
 		},
 	},
+	// About page content
 	&AboutBlock{
 		Meta: Meta{
 			Name:    "about",
