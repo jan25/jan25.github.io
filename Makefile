@@ -3,8 +3,13 @@ GOBUILD=$(GOCMD) build
 BINARY_NAME=portfolio
 BINARY_UNIX=$(BINARY_NAME)_unix
 
+.DEFAULT_GOAL := build-and-generate
+
+.PHONY: build-and-generate
+build-and-generate: clean build generate
+
 .PHONY: generate
-generate: build
+generate:
 	./$(BINARY_NAME)
 
 .PHONY: build

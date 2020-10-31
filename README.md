@@ -8,7 +8,7 @@ Clone or fork this repo and modify content defined in `content.go` file to see y
 
 ```sh
 # Generate static files
-make generate
+make build-and-generate
 # OR simply
 make
 
