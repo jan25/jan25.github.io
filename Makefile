@@ -3,6 +3,15 @@ GOBUILD=$(GOCMD) build
 BINARY_NAME=portfolio
 BINARY_UNIX=$(BINARY_NAME)_unix
 
+.DEFAULT_GOAL := build-and-generate
+
+.PHONY: build-and-generate
+build-and-generate: clean build generate
+
+.PHONY: generate
+generate:
+	./$(BINARY_NAME)
+
 .PHONY: build
 build:
 	$(GOBUILD) -o $(BINARY_NAME)
@@ -11,16 +20,11 @@ build:
 build-linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_UNIX)
 
-.PHONY: run
-run: build
-	./$(BINARY_NAME)
-
 .PHONY: clean
 clean:
 	rm -f $(BINARY_NAME)
 	rm -f $(BINARY_UNIX)
-	rm -f ./public/about.html
-	rm -f ./public/projects.html
+	find public | grep "[^index].html" | xargs rm
 
 .PHOHY: deploy
 deploy:

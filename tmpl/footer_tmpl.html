@@ -1,0 +1,6 @@
+<footer>
+    {{ range $i, $e := .Links }}
+    {{ if $i }}&nbsp;{{ end }}
+    <a href="{{ .URL }}" target="_blank">{{ .Title }}</a>
+    {{ end }}
+</footer>
