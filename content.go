@@ -19,7 +19,7 @@ var Blocks = []Block{
 			},
 			{
 				Title: "Move my files",
-				Desc:  "Simple CLI to organize files on your computer. Written in Python can be installed from pypi.",
+				Desc:  "Easy to use CLI tool to organize files on your computer written in Python.",
 				Link:  "https://github.com/jan25/move-my-files",
 			},
 			{
@@ -29,12 +29,12 @@ var Blocks = []Block{
 			},
 			{
 				Title: "Memory test",
-				Desc:  "Test your short term memory skills using this simple React app.",
+				Desc:  "Test your short term memory skills using this simple game written using ReactJS, inspired by a BBC Earth video.",
 				Link:  "https://github.com/jan25/memory-test",
 			},
 			{
 				Title: "Skripts",
-				Desc:  "Execute node.js scripts inside a web browser. Comes with Node backend server and Vuejs frontend.",
+				Desc:  "Execute node.js scripts inside a web browser and share using unique links. Implemented using Node and Vuejs.",
 				Link:  "https://github.com/jan25/skripts",
 			},
 			{
@@ -44,17 +44,17 @@ var Blocks = []Block{
 			},
 			{
 				Title: "Sudoku",
-				Desc:  "React app with fairly difficult puzzles that are pregenerated in Python.",
+				Desc:  "React app with fairly difficult puzzles that are pregenerated using a Python script.",
 				Link:  "https://github.com/jan25/sudoku",
 			},
 			{
 				Title: "F1 Lights",
-				Desc:  "Test your reaction times with this web app implemented using Vue.js.",
+				Desc:  "Test your reaction times with Formula1 lights implemented using Vuejs.",
 				Link:  "https://github.com/jan25/f1-lights",
 			},
 			{
 				Title: "Track ISS",
-				Desc:  "Close to real time position tracking of International space station. Implemented using Reactjs.",
+				Desc:  "Web app for real time position tracking of International space station written in React",
 				Link:  "https://github.com/jan25/track-iss",
 			},
 			{
@@ -64,7 +64,7 @@ var Blocks = []Block{
 			},
 			{
 				Title: "Shuffle",
-				Desc: "Shuffling algorithm inspired by a Spotify blog post about shuffling songs in a playlist without needing for true randomness.",
+				Desc: "Shuffling algorithm written in Typescript, inspired by a Spotify blog post on shuffling playlist songs without needing for true randomness.",
 				Link: "https://github.com/jan25/shuffle",
 			},
 			{
@@ -74,12 +74,12 @@ var Blocks = []Block{
 			},
 			{
 				Title: "Valen10",
-				Desc:  "Breakout game with emojis and silly gifs implemented on a Feb the 14th. Written in vanilla JS with support for offline mode.",
+				Desc:  "Breakout game with emojis and silly gifs implemented on a Feb the 14th. Written in vanilla JS with offline support.",
 				Link:  "https://github.com/jan25/sandbox-2020/tree/master/valen10",
 			},
 			{
 				Title: "Saint valentin",
-				Desc: "GPT-2 based valentines day latter generator.",
+				Desc: "GPT-2 based valentines day letter generator.",
 				Link: "https://github.com/jan25/saint-valentin",
 			},
 			{
@@ -98,11 +98,11 @@ var Blocks = []Block{
 		Paragraphs: []string{
 			`My name is Abhilash. I'm a Sofware engineer, mainly working on web applications. I've listed some of my projects in <a href="/projects.html">Projects</a> section, do check it!`,
 
-			`I work on all parts of web application development. Parts I enjoy most are at the intersection of product/application and infrastructure, such as Developer tooling, CI/CD and Monitoring. Though currently focused on frontend and backend product development, my goal is to slowly transition into teams that build tooling to improve this intersection.`,
+			`I work on all parts of web application stack. Parts I enjoy most are at the intersection of product/application and infrastructure, such as Developer tooling, Observability and CI/CD. Though currently focused on frontend and backend product development, my goal is to transition into teams that build tooling to improve this intersection.`,
 
 			`I contribute to Open-source projects in spare time, mainly to Observability communities. I help them with small-medium features, testing, documentation or anything i can fit in my free time. I've enjoyed learning many things and not to mention giving back to community. I also got to interact with amazing engineers from different organizations.`,
 
-			`Outside technical work, I follow F1 and listen to radio. I also enjoy cooking and discovering new recipes. I like traveling to explore new places or simply exploring neighborhoods on my bicycle if not far. When I can, I take part in voluntary work in my city.`,
+			`Outside technical work, I follow Formula1 and listen to ton of podcasts and radio. I also enjoy cooking and discovering new recipes. I like travelling to explore new places or simply exploring neighborhoods on my bicycle if not far. I also like to help with voluntary work in my city.`,
 
 			`Kia Ora! I found Kia Ora in this <a href="https://www.youtube.com/watch?v=zVDu0tJHTnY" target="_blank">video</a>. Have a great day!`,
 		},
