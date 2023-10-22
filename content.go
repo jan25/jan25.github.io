@@ -103,7 +103,7 @@ var Blocks = []Block{
 		Paragraphs: []string{
 			`👋 Hi there! I'm Abhilash. I like Developer tooling and CI/CD spaces. Do checkout my <a href="/projects.html">Projects</a> section.`,
 
-			`Currently and in the past, I enjoyed solving both product and infrastructure problems at large scale companies. I contribute to Open-source projects in spare time, mainly to Observability communities. I care continuous learning and growth.`,
+			`Currently and in the past, I enjoyed solving both product and infrastructure problems at large scale companies. I contribute to Open-source projects in spare time, mainly to Observability communities. I care about continuous learning and growth.`,
 
 			`Besides work, I follow Formula 1, football and listen to ton of podcasts and radio. I also enjoy discovering cooking recipes, travelling to new places, long distance cycling and voluntary work near whereever i live.`,
 
