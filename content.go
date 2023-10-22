@@ -13,6 +13,11 @@ var Blocks = []Block{
 		},
 		Projects: []Project{
 			{
+				Title: "Snap",
+				Desc:  "Snapshot file testing tool written in bash.",
+				Link:  "https://github.com/jan25/bash",
+			},
+			{
 				Title: "Termracer",
 				Desc:  "Terminal based touch typing tutor written in Go. Works completely offline.",
 				Link:  "https://github.com/jan25/termracer",
