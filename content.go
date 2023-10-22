@@ -101,15 +101,13 @@ var Blocks = []Block{
 			Heading: "About",
 		},
 		Paragraphs: []string{
-			`My name is Abhilash. I'm a Sofware engineer, mainly working on web applications. I've listed some of my projects in <a href="/projects.html">Projects</a> section, do check it!`,
+			`👋 Hi there! I'm Abhilash. I like Developer tooling and CI/CD spaces. Do checkout my <a href="/projects.html">Projects</a> section.`,
 
-			`I work on all parts of web application stack. Parts I enjoy most are at the intersection of product/application and infrastructure, such as Developer tooling, Observability and CI/CD. Though currently focused on frontend and backend product development, my goal is to transition into teams that build tooling to improve this intersection.`,
+			`Currently and in the past, I enjoyed solving both product and infrastructure problems at large scale companies. I contribute to Open-source projects in spare time, mainly to Observability communities. I care continuous learning and growth.`,
 
-			`I contribute to Open-source projects in spare time, mainly to Observability communities. I help them with small-medium features, testing, documentation or anything i can fit in my free time. I've enjoyed learning many things and not to mention giving back to community. I also got to interact with amazing engineers from different organizations.`,
+			`Besides work, I follow Formula 1, football and listen to ton of podcasts and radio. I also enjoy discovering cooking recipes, travelling to new places, long distance cycling and voluntary work near whereever i live.`,
 
-			`Outside technical work, I follow Formula1 and listen to ton of podcasts and radio. I also enjoy cooking and discovering new recipes. I like travelling to explore new places or simply exploring neighborhoods on my bicycle if not far. I also like to help with voluntary work in my city.`,
-
-			`Kia Ora! I found Kia Ora in this <a href="https://www.youtube.com/watch?v=zVDu0tJHTnY" target="_blank">video</a>. Have a great day!`,
+			`Kia Ora! I found Kia Ora in this <a href="https://www.youtube.com/watch?v=zVDu0tJHTnY" target="_blank">video</a>.`,
 		},
 	},
 }
