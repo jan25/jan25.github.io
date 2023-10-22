@@ -15,7 +15,7 @@ var Blocks = []Block{
 			{
 				Title: "Snap",
 				Desc:  "Snapshot file testing tool written in bash.",
-				Link:  "https://github.com/jan25/bash",
+				Link:  "https://github.com/jan25/snap",
 			},
 			{
 				Title: "Termracer",
