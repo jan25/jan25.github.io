@@ -13,6 +13,16 @@ var Blocks = []Block{
 		},
 		Projects: []Project{
 			{
+				Title: "draw43",
+				Desc:  "2D line drawing animation using Fourier series, to draw a rose using math functions.",
+				Link:  "https://github.com/jan25/draw43",
+			},
+			{
+				Title: "vscode-timer",
+				Desc:  "VS code timer extension to take regular breaks from coding sessions.",
+				Link:  "https://github.com/jan25/vscode-timer",
+			},
+			{
 				Title: "Snap",
 				Desc:  "Snapshot file testing tool written in bash.",
 				Link:  "https://github.com/jan25/snap",
